@@ -1,0 +1,87 @@
+
+<html>
+
+    <head>
+        <title>Kasimu Education Fund Students</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <!-- <links type="text/css" href="/assets/css/style.css"> -->
+    </head>
+    
+    <body>
+        <header>
+            <div class="container">
+                <h1 id="navbar-brand"><a href="students">Kasimu Education Fund</a></h1>
+                <nav class="navbar">
+                    <ul id="navbar-nav" class="hidden">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/students">Fund a Student</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Get Involved</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                        <!--                <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>-->
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    
+        <section id="students">
+            <div class="container">
+                <h1>Kasimu Education Fund Students <br> 100% of donations go to students</h1>
+                <ul class="students">
+                    <% for (var i =0; i < data.length; i++) { 
+                        var stroke = data[i].raised/data[i].amount_needed * 654 + 654;
+                        %>
+                    <li>
+                        <a href="/students/<%=data[i].id%>">
+                        <h2><%= data[i].first_name %> <%= data[i].last_name %></h2>
+                        <div class="item css">
+                            <div class="percentage" ><%=Math.floor(data[i].raised/data[i].amount_needed*100)%>%</div>
+                            <img src="<%= data[i].image %>" alt="<%= data[i].first_name %> <%= data[i].last_name %>">
+                            <svg width="218" height="218" xmlns="http://www.w3.org/2000/svg">
+                                <g>
+                                    <circle id="circle" class="circle_animation" r="104.0" cy="109" cx="109"
+                                    stroke-width="10" stroke="#008800" fill="none"
+                                    style="stroke-dashoffset:<%=stroke%>;stroke-dasharray:<%=stroke%>;" />
+<!--                                    <circle id="circle1" class="circle_animation" r="114.0" cy="109" cx="109"
+                                  stroke-width="10" stroke="#008800" fill="none"
+                                    style="stroke-dashoffset:<%=stroke%>;stroke-dasharray:<%=stroke%>;" />  -->
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="location">
+                            <%= data[i].country %>
+                        </div>
+                        <p class="bio">
+                            <%= data[i].bio %>
+                        </p>
+                        <div class="need">
+                            Needed $<%= parseInt(data[i].amount_needed/100) %>
+                        </div>
+                        <div class="raised">
+                            Raised $<%=parseInt(data[i].raised/100)%>
+                        </div>
+                        <p>
+                            Semester: <%= data[i].semester%> - Year: <%=data[i].year.getFullYear()%>
+                        </p>
+                        </a>        
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </section>
+    
+        <footer>
+            Copyright © Kevin Burns
+        </footer>
+        <script type="text/javascript">
+    
+        </script>
+    </body>
+    
+    </html>

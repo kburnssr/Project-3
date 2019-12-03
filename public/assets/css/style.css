@@ -1,0 +1,217 @@
+/**
+ * Float Layout Activity
+ **/
+
+ * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+  /*  min-height: 100vh;*/
+  }
+  
+  body {  
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: #777;
+    background-color: #eee;
+    font-size: 13px;
+    margin: 0 0 10px 0;
+  }
+  header {
+    background-color: #fff;
+    border-bottom: 1px solid #999;
+    height: 4em;
+  }
+  div.container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  #navbar-brand{
+    padding: 12px 20px;
+    background-color: #393;
+    color: #fff;
+    float: left;
+  }
+#navbar-brand a {
+  text-decoration: none;  
+  color: inherit;
+}
+  
+  #menu-item-responsive {
+    float: right;
+  }
+  
+  #menu, #navbar-nav {
+      float: right;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+  }
+  
+  header li {
+    display: inline-block;
+  }
+  
+  #navbar-toggler {
+    display: none;
+  }
+  
+  #aboutme {
+    clear: both;
+    /* max-width: 960px;  */
+    margin: 50px auto;
+    padding: 20px;
+  }
+  section div{
+    padding: 20px;
+  }
+  section{
+      clear: both;
+  }
+  h1 {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  footer {
+    text-align: center;
+    border-top: 4px solid #393;
+    background-color: #333;
+    color: #ccc;
+    padding: 8px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    }   
+  
+  @media(max-width: 768px){
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      background: white;
+      border-bottom: solid 1px gray;
+    }
+  
+    .hidden {
+      display: none;
+    }
+  
+    .nav-item {
+      display: block;
+      width: auto;
+      padding: 0 20px;
+    }
+
+    #navbar-nav:hover {
+      display: block;
+      position: static;
+    }
+  }
+  ul.students{
+      padding: 0;
+  }
+  ul.students li{
+      width: 28%;
+      margin-right: 2%;
+      float: left;
+      list-style: none;
+      padding: 2%;
+      border: 1px solid #999;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-bottom: 2%;
+   }
+  ul.students li:nth-child(3n){
+      margin-right: 0;
+  }
+  ul.students li:nth-child(3n+1){
+      clear: left;
+  }
+  ul.students li a{
+    color: inherit;
+    text-decoration: none;
+  }
+  ul.students li div.percentage{
+    width: 198px;
+    border-radius: 50%;
+    line-height: 198px;
+    position: absolute;
+    color: white;
+    font-size: 4em;
+    z-index: 1000;
+    display: none;
+    padding: 0;
+    background: rgba(0,136,0,0.5);
+    font-weight: bold;
+    margin: 10px;
+
+  }
+  ul.students li:hover div.percentage{
+    display: block;
+  }
+
+  ul.students li img{
+      width: 218px;
+      border-radius: 50%;
+      border: 10px solid #e9e9e9;
+      display: block;
+  }
+  ul.students li h2,
+  ul.students li p,
+  ul.students li div{
+      text-align: center;
+      padding: 10px 0;
+      clear: both;
+  }
+  ul.students li h2{
+    margin: 0;
+    height: 3.5em;
+  }
+  ul.students li div.need,
+  ul.students li div.raised{
+      float: left;
+      width: 50%;
+      clear: none;
+  }
+  ul.students p.bio{
+    height: 3.5em;
+  }
+  .item {
+    position: relative;
+}
+
+.item img {
+    text-align:center;
+    position: absolute;
+    line-height: 125px;
+    width: 100%;
+}
+
+svg {
+   -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.circle_animation {
+  stroke-dasharray: 1308; /* this value is the pixel circumference of the circle */
+  stroke-dashoffset: 1308;
+}
+
+.css .circle_animation {
+    -webkit-animation: css 1s ease-out forwards;
+    animation: css 1s ease-out forwards;
+}
+
+@-webkit-keyframes css {
+  to {
+    stroke-dashoffset: 654;
+  }
+}
+
+@keyframes css {
+  to {
+    stroke-dashoffset: 654;
+  }
+}
