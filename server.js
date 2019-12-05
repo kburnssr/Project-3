@@ -58,6 +58,7 @@ app.get('/students/:id', function(req, res){
 		sp.image,
 		sp.country,
 		sp.bio,
+		sp.detailed_bio,
 		c.tuition_fees AS amount_needed,
 		SUM(d.amount) AS raised,
 		c.semester,
@@ -73,6 +74,7 @@ app.get('/students/:id', function(req, res){
 	connection.query(q, [req.params.id], function (error, results, fields) {
 		console.log(results);
 	  if (error) res.send(error)
+	  console.log(results[0]);
 	  res.render("pages/student",{ data: results[0]});
 	});
 });
